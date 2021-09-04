@@ -3,7 +3,7 @@
 ## TASK1
 Write a program that allows the user to enter the name of a file. Try to open the file provided for read access. If the file exists, you can print a confirmation message. If the file does not exist, you should let the user know that the file cannot be found and prompt them again. 
 - _Existing files are class1.txt, class2.txt.......class8.txt_
- * Input the name of file you want to open
+ * Input the name of file you want to check and run the function checkfile in task 1 to make sure that the file is 'valid':
 ```python
 file_name = input('Enter a class file to grade (i.e. class1 for class1.txt): ')
 ```
@@ -41,8 +41,9 @@ In task 2, you need to:
 * Input the name of file you want to open
 ```python
 file_name = input('Enter a class file to grade (i.e. class1 for class1.txt): ')
+checkfile(file_name)
 ```
-* Write a function invalid_row(file_name) to make sure rows in the file is 'valid:
+* Write a function invalid_row(file_name) to make sure rows in the file is 'valid':
 ```python
 def invalid_rows(file_name):
     try:
@@ -81,3 +82,27 @@ def invalid_rows(file_name):
     except:
         pass
 ```
+* The results for file_name='class2' as below:
+
+        Enter a class to grade (i.e. class1 for class1.txt): class2
+        Successfully opened class2.txt 
+
+        **** ANALYZING **** 
+
+        Invalid line of data: does not contain exactly 26 values:
+        N00000023,,A,D,D,C,B,D,A,C,C,,C,,B,A,C,B,D,A,C,A,A
+
+        Invalid line of data: N# is invalid
+        N0000002,B,A,D,D,C,B,D,A,C,D,D,D,A,,A,C,D,,A,C,A,A,B,D,D
+
+        Invalid line of data: N# is invalid
+        NA0000027,B,A,D,D,,B,,A,C,B,D,B,A,,A,C,B,D,A,,A,A,B,D,D
+
+        Invalid line of data: does not contain exactly 26 values:
+        N00000035,B,A,D,D,B,B,,A,C,,D,B,A,B,A,A,B,D,A,C,A,C,B,D,D,A,A
+
+        **** REPORT **** 
+
+        Total valid lines of data: 21
+        Total invalid lines of data: 4
+
