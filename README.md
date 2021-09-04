@@ -35,4 +35,49 @@ In task 2, you need to:
 * Parse each line and make sure it is "valid".
     - A valid line containing a list of 26 comma-separated values
     - N# for a student is the first item on the line. It must contain the character “N” followed by 8 numeric characters.
-    - If a data stream is invalid, you should report it to the user by printing an error message. You should also count the total number of valid data lines in the file.
+* If a data stream is invalid, you should report it to the user by printing an error message. You should also count the total number of valid data lines in the file.
+
+###Code
+* Input the name of file you want to open
+```python
+file_name = input('Enter a class file to grade (i.e. class1 for class1.txt): ')
+```
+* Write a function invalid_row(file_name) to make sure rows in the file is 'valid:
+```python
+def invalid_rows(file_name):
+    try:
+        file_class=file_name+'.txt'
+        with open(file_class,'r') as read_file:
+            text_lines=read_file.readlines()
+        print('**** ANALYZING **** \n')
+        N_valid=0
+        N_invalid=0
+        for i in text_lines:
+            text=i.split(',')
+            text_values=np.array(text)
+
+            #Invalid line of data: does not contain exactly 26 values
+            if len(text_values) != 26:
+                N_invalid = N_invalid + 1
+                print('Invalid line of data: does not contain exactly 26 values:')
+                print(i)
+
+            #Invalid line of data: N# is invalid
+            a=re.findall('N[0-9]{8}',text[0])
+            if text[0] not in a:
+                N_invalid = N_invalid + 1
+                print('Invalid line of data: N# is invalid')
+                print(i)
+
+        N_valid=len(text_lines)- N_invalid
+
+        #Print results on screen
+        if N_invalid==0:
+            print('No errors found! \n')
+
+        print('**** REPORT **** \n')
+        print('Total valid lines of data:',N_valid)
+        print('Total invalid lines of data:',N_invalid)
+    except:
+        pass
+```
