@@ -31,8 +31,8 @@ def checkfile(file):
 ## TASK 2
 
 In task 2, you need to:
-*Report the total number of lines of data stored in the file.
-*Parse each line and make sure it is "valid".
-    -A valid line containing a list of 26 comma-separated values
-    -N# for a student is the first item on the line. It must contain the character “N” followed by 8 numeric characters.
-    -If a data stream is invalid, you should report it to the user by printing an error message. You should also count the total number of valid data lines in the file.
+* Report the total number of lines of data stored in the file.
+* Parse each line and make sure it is "valid".
+    - A valid line containing a list of 26 comma-separated values
+    - N# for a student is the first item on the line. It must contain the character “N” followed by 8 numeric characters.
+    - If a data stream is invalid, you should report it to the user by printing an error message. You should also count the total number of valid data lines in the file.
