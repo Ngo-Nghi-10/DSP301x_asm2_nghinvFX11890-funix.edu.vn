@@ -2,7 +2,7 @@
 
 ## TASK1
 Write a program that allows the user to enter the name of a file. Try to open the file provided for read access. If the file exists, you can print a confirmation message. If the file does not exist, you should let the user know that the file cannot be found and prompt them again. 
-_Existing files are class1.txt, class2.txt.......class8.txt_
+- _Existing files are class1.txt, class2.txt.......class8.txt_
  * Input the name of file you want to open
 ```python
 file_name = input('Enter a class file to grade (i.e. class1 for class1.txt): ')
@@ -20,8 +20,8 @@ def checkfile(file):
         print('Error')
 ```
 * The confirmation are the follwing below:
--Enter a class file to grade (i.e. class1 for class1.txt): class1
--Successfully opened class1.txt
--OR
--Enter a class file to grade (i.e. class1 for class1.txt): class9
--File cannot be found.
+- Enter a class file to grade (i.e. class1 for class1.txt): class1
+- Successfully opened class1.txt
+- OR
+- Enter a class file to grade (i.e. class1 for class1.txt): class9
+- File cannot be found.
