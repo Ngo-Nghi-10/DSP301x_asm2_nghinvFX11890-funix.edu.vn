@@ -1,12 +1,4 @@
-# DSP301x_asm2_nghinvFX11890-funix.edu.vn
+# ASSIGNMENT 2 
 
 ## TASK1
-def checkfile(file):
-    data_file = ['class'+ str(i) for i in range(1,9)]
-    try:
-        if file in data_file:
-            print('Successfully opened',file+'.txt','\n')
-        else:
-            print('File cannot be found.')
-    except:
-        print('Error')
+Write a program that allows the user to enter the name of a file. Try to open the file provided for read access. If the file exists, you can print a confirmation message. If the file does not exist, you should let the user know that the file cannot be found and prompt them again.
