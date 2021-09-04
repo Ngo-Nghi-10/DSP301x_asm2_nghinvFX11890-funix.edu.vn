@@ -20,8 +20,8 @@ def checkfile(file):
         print('Error')
 ```
 * The confirmation are the follwing below:
-Enter a class file to grade (i.e. class1 for class1.txt): class1
-Successfully opened class1.txt
-&
-Enter a class file to grade (i.e. class1 for class1.txt): class9
-File cannot be found.
+-Enter a class file to grade (i.e. class1 for class1.txt): class1
+-Successfully opened class1.txt
+-OR
+-Enter a class file to grade (i.e. class1 for class1.txt): class9
+-File cannot be found.
