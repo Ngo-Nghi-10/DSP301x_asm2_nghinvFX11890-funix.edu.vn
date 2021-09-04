@@ -49,10 +49,13 @@ checkfile(file_name)
 ```python
 def invalid_rows(file_name):
     try:
+        #open the file_name
         file_class=file_name+'.txt'
         with open(file_class,'r') as read_file:
             text_lines=read_file.readlines()
+        
         print('**** ANALYZING **** \n')
+        
         N_valid=0
         N_invalid=0
         for i in text_lines:
@@ -77,7 +80,6 @@ def invalid_rows(file_name):
         #Print results on screen
         if N_invalid==0:
             print('No errors found! \n')
-
         print('**** REPORT **** \n')
         print('Total valid lines of data:',N_valid)
         print('Total invalid lines of data:',N_invalid)
@@ -111,3 +113,16 @@ invalid_rows(file_name)
 
 ## TASK 3
 
+you will write a program to grade exams for a given section. The exam consists of 25 questions. Here is a string representing the answers:
+answer_key = "B,A,D,D,C,B,D,A,C,C,D,B,A,B,A,C,B,D,A,C,A,A,B,D ,D"
+
+Your program should use these responses to calculate a score for each valid line of data. Points can be calculated as follows:
+    +4 points for each correct answer
+    0 points for each answer ignored
+    -1 point for each wrong answer
+You will also want to calculate the following statistics for the entire class:
+    Medium score
+    Highest point
+    Lowest score
+    Score range (highest minus lowest)
+    Median value
