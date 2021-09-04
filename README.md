@@ -8,7 +8,7 @@ _Existing files are class1.txt, class2.txt.......class8.txt_
 file_name = input('Enter a class file to grade (i.e. class1 for class1.txt): ')
 ```
  * Write a function to check and print a confirmation message
-```
+```python
 def checkfile(file):
     data_file = ['class'+ str(i) for i in range(1,9)]
     try:
