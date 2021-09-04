@@ -21,11 +21,11 @@ def checkfile(file):
 ```
 * The confirmation are the follwing statements below:
 
-        - Enter a class file to grade (i.e. class1 for class1.txt): class1
-        - Successfully opened class1.txt
-        - OR
-        - Enter a class file to grade (i.e. class1 for class1.txt): class9
-        - File cannot be found.
+        Enter a class file to grade (i.e. class1 for class1.txt): class1
+        Successfully opened class1.txt
+        OR
+        Enter a class file to grade (i.e. class1 for class1.txt): class9
+        File cannot be found.
 
 
 ## TASK 2
@@ -37,13 +37,15 @@ In task 2, you need to:
     - N# for a student is the first item on the line. It must contain the character “N” followed by 8 numeric characters.
 * If a data stream is invalid, you should report it to the user by printing an error message. You should also count the total number of valid data lines in the file.
 
-###Code
+### Code
 * Input the name of file you want to open
 ```python
 file_name = input('Enter a class file to grade (i.e. class1 for class1.txt): ')
 checkfile(file_name)
 ```
-* Write a function invalid_row(file_name) to make sure rows in the file is 'valid':
+* Write a function invalid_row(file_name) to:
+    * count the number of rows is 'valid' and 'invalid'
+    * If invalid => print the invalid rows within 'Invalid line of data: N# is invalid' or Invalid line of data: does not contain exactly 26 values
 ```python
 def invalid_rows(file_name):
     try:
@@ -81,8 +83,9 @@ def invalid_rows(file_name):
         print('Total invalid lines of data:',N_invalid)
     except:
         pass
+invalid_rows(file_name)
 ```
-* The results for file_name='class2' as below:
+* The results for file_name='class2' after run the code above is:
 
         Enter a class to grade (i.e. class1 for class1.txt): class2
         Successfully opened class2.txt 
@@ -105,4 +108,6 @@ def invalid_rows(file_name):
 
         Total valid lines of data: 21
         Total invalid lines of data: 4
+
+## TASK 3
 
