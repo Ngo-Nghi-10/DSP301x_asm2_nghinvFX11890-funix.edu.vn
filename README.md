@@ -117,10 +117,12 @@ invalid_rows(file_name)
         answer_key = "B,A,D,D,C,B,D,A,C,C,D,B,A,B,A,C,B,D,A,C,A,A,B,D ,D"
 
 * Your program should use these responses to calculate a score for each valid line of data. Points can be calculated as follows:
+
             * +4 points for each correct answer
             * 0 points for each answer ignored
             * -1 point for each wrong answer
 * You will also want to calculate the following statistics for the entire class:
+
             * Medium score
             * Highest point
             * Lowest score
