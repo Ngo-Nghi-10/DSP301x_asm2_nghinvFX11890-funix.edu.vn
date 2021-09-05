@@ -138,9 +138,10 @@ checkfile(file_name)
 invalid_rows(file_name)
 ```
 
-* Create a Functions to transfer all ID number, answers into DataFrame by using Pandas:
- - Delete all the invalid row ( the rơ with the length not equals with 26 and ID number is not contain “N” followed by 8 numeric characters
- - Transfer all the row into DataFrame using Pandas: pd.DataFrame()
+* Create a Functions prepare(file_name) to transfer all ID number and answers into DataFrame by using Pandas:
+*
+     - Delete all the invalid row ( the rơ with the length not equals with 26 and ID number is not contain “N” followed by 8 numeric characters
+     - Transfer all the row into DataFrame using Pandas: pd.DataFrame()
 ```python
 #Function to create DataFrame of valid rows for entire class.  
 def prepare(file_name):
@@ -160,4 +161,79 @@ def prepare(file_name):
         row_data=[i.split(',') for i in text]
     data=pd.DataFrame(row_data)
     return data
+```
+
+* Create Function clean(data) to clean data in DataFrame and caculate grades for each student, also prepare dataa for answering the questions:
+
+```python
+def clean(data_prepare):
+    data=prepare(file_name)
+    
+    #change the columns's name
+    header=['Q'+str(i) for i in range(0,26)]
+    data.columns=header
+    data=data.rename(columns={'Q0':'student_number'})
+    data['Q25']=data['Q25'].str.replace('\n','')
+    
+    #answer keys for each question
+    answer_key = "B,A,D,D,C,B,D,A,C,C,D,B,A,B,A,C,B,D,A,C,A,A,B,D,D"
+    answer_key=answer_key.split(',')
+    answer=pd.DataFrame(answer_key)
+
+    data['Point']=0
+
+    #caculate points for each student
+    for i in range(len(data)):
+        for j in range(1,26):
+            if data.iloc[i,j]==answer.iloc[j-1,0]:
+                data.iloc[i,26]=data.iloc[i,26]+4
+            elif data.iloc[i,j]== '':
+                data.iloc[i,26]=data.iloc[i,26]+0
+            elif data.iloc[i,j] != answer.iloc[j-1,0]:
+                data.iloc[i,26] = data.iloc[i,26] -1
+
+    return data
+```
+* Finally, print answers the quesrtion:
+```python
+#Answer the questions 
+data=clean(data_prepare)
+range_score=data['Point'].max()-data['Point'].min()
+print('Mean (average) score:',round(data['Point'].mean(),2))
+print('Highest score:',data['Point'].max())
+print('Lowest score:',data['Point'].min())
+print('Range of scores:', range_score)
+print('Median score:',data['Point'].median())
+
+```
+Here is answering for question after run the code above with class2
+
+```python
+Enter a class to grade (i.e. class1 for class1.txt): class2
+Successfully opened class2.txt 
+
+**** ANALYZING **** 
+
+Invalid line of data: does not contain exactly 26 values:
+N00000023,,A,D,D,C,B,D,A,C,C,,C,,B,A,C,B,D,A,C,A,A
+
+Invalid line of data: N# is invalid
+N0000002,B,A,D,D,C,B,D,A,C,D,D,D,A,,A,C,D,,A,C,A,A,B,D,D
+
+Invalid line of data: N# is invalid
+NA0000027,B,A,D,D,,B,,A,C,B,D,B,A,,A,C,B,D,A,,A,A,B,D,D
+
+Invalid line of data: does not contain exactly 26 values:
+N00000035,B,A,D,D,B,B,,A,C,,D,B,A,B,A,A,B,D,A,C,A,C,B,D,D,A,A
+
+**** REPORT **** 
+
+Total valid lines of data: 21
+Total invalid lines of data: 4
+Mean (average) score: 78.0
+Highest score: 100
+Lowest score: 66
+Range of scores: 34
+Median score: 76.0
+
 ```
