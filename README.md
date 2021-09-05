@@ -254,8 +254,8 @@ Finally, create a “results” file containing detailed results for each studen
 file_name = input('Enter a class to grade (i.e. class1 for class1.txt): ')
 ```
 
-* using opne(file_name.txt,'r+') with mode 'r+' : read and write
-*need to use the dataframe in the task 3 to complete task 4. The data need to write to the grade file is from dataframe in task 3
+* Using opne(file_name.txt,'r+') with mode 'r+' : read and write
+* Need to use the dataframe in the task 3 to complete task 4. The data need to write to the grade file is ID number and grades from dataframe in task 3
 
 ```python
 #load and prepare data
@@ -274,4 +274,4 @@ with open(grades_class,'w') as write_file:
 ```
 * After run the code above, the result file will be saved in the folder, which is the same place with your code file.
 
-##THE END 
+## THE END 
