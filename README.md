@@ -240,10 +240,4 @@ Here is answering for question after run the code above with class2
 ```python
 data.head()
 ```
-	student_number	Q1	Q2	Q3	Q4	Q5	Q6	Q7	Q8	Q9	...	Q17	Q18	Q19	Q20	Q21	Q22	Q23	Q24	Q25	Point
-0	N00000021	B	A	C	D	C	C	D	D	C	...	B		A	D	A	A	B	D		68
-1	N00000022	B	A	D	A	C	B	D	D	C	...	B	A	A	C	A	A	B	A	D	76
-2	N00000024	C	C	D	D	C	B		A	C	...	B	D	A	C	A	B	B		D	73
-3	N00000026	B	C	D	D	C	D	B	A	C	...	B	D		C	A	A	B	D	D	72
-4	N00000028	B	A	D	D	D	B	D	A	C	...	B	D	C	C	A	A	B	C	D	73
-5 rows × 27 columns
+![image](https://user-images.githubusercontent.com/90102036/132117485-8844f78a-028e-4250-96ad-7768ee3a9a7b.png)
