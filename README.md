@@ -128,3 +128,36 @@ invalid_rows(file_name)
             * Lowest score
             * Score range (highest minus lowest)
             * Median value
+
+
+### CODE
+* Input the file_name and run the funtions to make sure the file_name is valid. Then run the function invalid_row in task 2 to check the invalid row in each file.
+```python
+file_name = input('Enter a class to grade (i.e. class1 for class1.txt): ')
+checkfile(file_name)
+invalid_rows(file_name)
+```
+
+* Create a Functions to transfer all ID number, answers into DataFrame by using Pandas:
+ - Delete all the invalid row ( the rơ with the length not equals with 26 and ID number is not contain “N” followed by 8 numeric characters
+ - Transfer all the row into DataFrame using Pandas: pd.DataFrame()
+```python
+#Function to create DataFrame of valid rows for entire class.  
+def prepare(file_name):
+    with open(file_name+'.txt','r') as r:
+        text_lines=r.readlines()
+        
+        #Delete invalid rows 
+        text=[]
+        for i in range(0,len(text_lines)):
+            row=text_lines[i]
+            line=row.split(',')
+            a=re.findall('N[0-9]{8}',line[0])
+            if len(line)!=26:
+                pass
+            elif line[0] in a:
+                text.append(row)
+        row_data=[i.split(',') for i in text]
+    data=pd.DataFrame(row_data)
+    return data
+```
