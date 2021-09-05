@@ -45,7 +45,7 @@ checkfile(file_name)
 ```
 * Write a function invalid_row(file_name) to:
     * count the number of rows is 'valid' and 'invalid'
-    * If invalid => print the invalid rows within 'Invalid line of data: N# is invalid' or Invalid line of data: does not contain exactly 26 values
+    * If invalid => print the invalid rows with information for each row: 'Invalid line of data: N# is invalid' or Invalid line of data: does not contain exactly 26 values
 ```python
 def invalid_rows(file_name):
     try:
@@ -117,12 +117,12 @@ invalid_rows(file_name)
         answer_key = "B,A,D,D,C,B,D,A,C,C,D,B,A,B,A,C,B,D,A,C,A,A,B,D ,D"
 
 * Your program should use these responses to calculate a score for each valid line of data. Points can be calculated as follows:
-        +4 points for each correct answer
-        0 points for each answer ignored
-        -1 point for each wrong answer
+        - +4 points for each correct answer
+        - 0 points for each answer ignored
+        - -1 point for each wrong answer
 * You will also want to calculate the following statistics for the entire class:
-        Medium score
-        Highest point
-        Lowest score
-        Score range (highest minus lowest)
-        Median value
+        - Medium score
+        - Highest point
+        - Lowest score
+        - Score range (highest minus lowest)
+        - Median value
