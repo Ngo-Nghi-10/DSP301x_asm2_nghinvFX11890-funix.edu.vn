@@ -241,3 +241,37 @@ Here is answering for question after run the code above with class2
 data.head()
 ```
 ![image](https://user-images.githubusercontent.com/90102036/132117485-8844f78a-028e-4250-96ad-7768ee3a9a7b.png)
+
+
+## TASK 4
+
+Finally, create a “results” file containing detailed results for each student in your class. Each line of this file should contain the student's ID number, a comma, and then their grade. You should name this file based on the original filename provided — for example, if the user wants to analysic “class1.txt”, you should store the results in a file named “class1_grades.txt”.
+
+###CODE
+
+* Input the file_name that you want to analysis
+```python
+file_name = input('Enter a class to grade (i.e. class1 for class1.txt): ')
+```
+
+* using opne(file_name.txt,'r+') with mode 'r+' : read and write
+*need to use the dataframe in the task 3 to complete task 4. The data need to write to the grade file is from dataframe in task 3
+
+```python
+#load and prepare data
+prepare_data=prepare(file_name)
+grades=clean(prepare_data)
+grades_class=file_name+'_grades.txt'
+
+#write on grades files
+with open(grades_class,'w') as write_file:
+    for i in range(len(grades)):
+        row_write=[grades.loc[i,'student_number'],str(grades.loc[i,'Point'])]
+        write_file.write(row_write[0])
+        write_file.write(',')
+        write_file.write(row_write[1])
+        write_file.write('\n')
+```
+* After run the code above, the result file will be saved in the folder, which is the same place with your code file.
+
+##THE END 
