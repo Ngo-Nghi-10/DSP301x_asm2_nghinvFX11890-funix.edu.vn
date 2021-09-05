@@ -163,7 +163,7 @@ def prepare(file_name):
     return data
 ```
 
-* Create Function clean(data) to clean data in DataFrame and caculate grades for each student, also prepare dataa for answering the questions:
+* Create Function clean(data) to clean data in DataFrame and caculate grades for each student, also prepare data for answering the questions:
 
 ```python
 def clean(data_prepare):
@@ -194,7 +194,7 @@ def clean(data_prepare):
 
     return data
 ```
-* Finally, print answers the quesrtion:
+* Finally, print answers the questions:
 ```python
 #Answer the questions 
 data=clean(data_prepare)
@@ -208,32 +208,42 @@ print('Median score:',data['Point'].median())
 ```
 Here is answering for question after run the code above with class2
 
+
+    Enter a class to grade (i.e. class1 for class1.txt): class2
+    Successfully opened class2.txt 
+
+    **** ANALYZING **** 
+
+    Invalid line of data: does not contain exactly 26 values:
+    N00000023,,A,D,D,C,B,D,A,C,C,,C,,B,A,C,B,D,A,C,A,A
+
+    Invalid line of data: N# is invalid
+    N0000002,B,A,D,D,C,B,D,A,C,D,D,D,A,,A,C,D,,A,C,A,A,B,D,D
+
+    Invalid line of data: N# is invalid
+    NA0000027,B,A,D,D,,B,,A,C,B,D,B,A,,A,C,B,D,A,,A,A,B,D,D
+
+    Invalid line of data: does not contain exactly 26 values:
+    N00000035,B,A,D,D,B,B,,A,C,,D,B,A,B,A,A,B,D,A,C,A,C,B,D,D,A,A
+
+    **** REPORT **** 
+
+    Total valid lines of data: 21
+    Total invalid lines of data: 4
+    Mean (average) score: 78.0
+    Highest score: 100
+    Lowest score: 66
+    Range of scores: 34
+    Median score: 76.0
+
+* We also can check the DataFrame with: data.head() 
 ```python
-Enter a class to grade (i.e. class1 for class1.txt): class2
-Successfully opened class2.txt 
-
-**** ANALYZING **** 
-
-Invalid line of data: does not contain exactly 26 values:
-N00000023,,A,D,D,C,B,D,A,C,C,,C,,B,A,C,B,D,A,C,A,A
-
-Invalid line of data: N# is invalid
-N0000002,B,A,D,D,C,B,D,A,C,D,D,D,A,,A,C,D,,A,C,A,A,B,D,D
-
-Invalid line of data: N# is invalid
-NA0000027,B,A,D,D,,B,,A,C,B,D,B,A,,A,C,B,D,A,,A,A,B,D,D
-
-Invalid line of data: does not contain exactly 26 values:
-N00000035,B,A,D,D,B,B,,A,C,,D,B,A,B,A,A,B,D,A,C,A,C,B,D,D,A,A
-
-**** REPORT **** 
-
-Total valid lines of data: 21
-Total invalid lines of data: 4
-Mean (average) score: 78.0
-Highest score: 100
-Lowest score: 66
-Range of scores: 34
-Median score: 76.0
-
+data.head()
 ```
+	student_number	Q1	Q2	Q3	Q4	Q5	Q6	Q7	Q8	Q9	...	Q17	Q18	Q19	Q20	Q21	Q22	Q23	Q24	Q25	Point
+0	N00000021	B	A	C	D	C	C	D	D	C	...	B		A	D	A	A	B	D		68
+1	N00000022	B	A	D	A	C	B	D	D	C	...	B	A	A	C	A	A	B	A	D	76
+2	N00000024	C	C	D	D	C	B		A	C	...	B	D	A	C	A	B	B		D	73
+3	N00000026	B	C	D	D	C	D	B	A	C	...	B	D		C	A	A	B	D	D	72
+4	N00000028	B	A	D	D	D	B	D	A	C	...	B	D	C	C	A	A	B	C	D	73
+5 rows × 27 columns
